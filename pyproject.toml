@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "findlib"
+version = "0.1.0"
+description = "Image hashing library based on the FIND algorithm, with NumPy/scipy vectorisation, multiprocessing, and a FastAPI /compare endpoint."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.13"
+
+dependencies = [
+    "numpy>=2.0,<3.0",
+    "scipy>=1.15,<2.0",
+    "Pillow>=11.0,<12.0",
+    "imagehash>=4.3,<5.0",
+    "fastapi==0.136.1",
+    "uvicorn[standard]==0.46.0",
+    "python-multipart==0.0.27",
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["findlib*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
