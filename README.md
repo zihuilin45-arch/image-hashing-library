@@ -71,8 +71,10 @@ The /compare endpoint uses sequential L1 (per-request batch size N=2 is far belo
         test_api.py             FastAPI endpoint integration tests
         fixtures/               20 reference images for bit-exact unit tests
     Dockerfile                  Single-stage Python 3.13-slim container
-    requirements.txt            Hybrid pinning
+    pyproject.toml              PEP 621 project metadata (name, deps, classifiers)
+    requirements.txt            Pinned runtime dependencies (mirror of pyproject.toml)
     README.md
+    LICENSE                     MIT license
 
 ## Testing
 
