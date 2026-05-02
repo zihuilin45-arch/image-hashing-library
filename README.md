@@ -47,6 +47,8 @@ Interactive API docs are available at http://127.0.0.1:8945/docs (Swagger UI).
 
 ## Architecture
 
+**Note on optimisation labelling.** findlib references "L1" and "L3" optimisations rather than "L1" and "L2". This reflects the project's original three-tier optimisation framework: L1 (intra-image vectorisation), L2 (single-image multithreading), and L3 (cross-image multiprocessing). The intermediate L2 candidate was rejected at the candidate-evaluation stage after profiling identified Python's GIL as a hard blocker for single-image CPU-bound workloads (see report Part 1 §1.2). The L1/L3 labels are preserved across docstrings, this README, and the report for narrative consistency.
+
 findlib provides two layers of optimisation over the original FIND research code:
 
 - L1 (intra-image vectorisation): replaces Python loops with NumPy/scipy C-level operations (scipy.ndimage.uniform_filter, np.dot, np.partition). Achieves ~57x per-image speedup with bit-exact output preservation.
