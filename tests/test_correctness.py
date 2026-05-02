@@ -5,10 +5,11 @@ Two validation levels:
   1. Algorithm correctness (L1): FINDNumpyHasher == FINDHasher (bit-exact)
   2. Execution consistency (L3): parallel_hash == sequential_hash
 
-Test fixtures (tests/fixtures/sample_01..05.jpg) are 5 images randomly sampled
-from the LoC meme_images working corpus (subset_part2.txt, n=14,687) using
-random.seed(42) for reproducibility. The same dataset and sampling protocol
-are used throughout Parts 1, 2, and 3.
+Test fixtures (tests/fixtures/sample_01..20.jpg) are the same 20 LoC
+meme_images used in Part 1 §1.2.5 bit-exact verification (subset_golden.txt),
+sampled from the working corpus (subset_part2.txt, n=14,687) with
+random.seed=42. The same dataset and sampling protocol are used throughout
+Parts 1, 2, and 3.
 
 Run:
     python -m pytest tests/test_correctness.py -v
