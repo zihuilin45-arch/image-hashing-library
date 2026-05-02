@@ -1,0 +1,14 @@
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.git
+.gitignore
+.DS_Store
+*.bak
+results/
+archive/
+notebooks/
+.vscode/
+.idea/
+tests/
