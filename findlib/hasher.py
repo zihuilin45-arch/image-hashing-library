@@ -17,7 +17,7 @@ Sub-steps (L1.1 - L1.6, all within this class):
   L1.2 boxFilter   scipy.ndimage.uniform_filter
   L1.3 DCT         D @ A @ D.T
   L1.4 decimate    fancy indexing
-  L1.5 Torben      np.partition      [CURRENT]
+  L1.5 Torben      np.partition
   L1.6 bit pack    NumPy operations
 """
 from __future__ import annotations

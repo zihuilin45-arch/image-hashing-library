@@ -78,6 +78,14 @@ The /compare endpoint uses sequential L1 (per-request batch size N=2 is far belo
 
 ## Testing
 
+Install test dependencies (pytest is declared as an optional extra in pyproject.toml; not in requirements.txt to keep the production runtime image lean):
+
+    pip install pytest>=8.0
+    # or, with the package installed editably:
+    # pip install -e .[test]
+
+Run the test suite:
+
     python -m pytest tests/ -v
 
 Six tests cover:
